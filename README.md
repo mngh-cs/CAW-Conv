@@ -33,8 +33,6 @@ Unlike previous FF-based convolutional methods that rely on static channel group
 | DeeperForward       | CNN           | 86.22     | 99.63     | 93.13         |
 | **CAW-Conv (Ours)** | **ResNet-17** | **89.37** | **99.74** | **94.55**     |
 
----
-
 ### CIFAR-100 and Tiny-ImageNet
 
 | Method               | CIFAR-100 | Tiny-ImageNet |
