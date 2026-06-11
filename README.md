@@ -20,44 +20,6 @@ Unlike previous FF-based convolutional methods that rely on static channel group
 
 ---
 
-## Key Contributions
-
-### Learnable Channel-Class Assignment
-
-Instead of assigning channels permanently to predefined class groups, each convolutional layer learns a channel-class contribution matrix:
-
-This enables:
-
-* Adaptive channel specialization
-* Improved feature diversity
-* Better utilization of network capacity
-* Reduced redundancy across channels
-
----
-
-### Entropy and Orthogonality Regularization
-
-To encourage meaningful channel specialization, the channel-class assignment matrix is regularized using:
-
-* Entropy minimization
-* Orthogonality constraints
-
-These regularizers promote:
-
-* Sparse class-channel associations
-* Diverse class representations
-* Improved discriminative learning
-
----
-
-### Layer Contribution Strategy (LCS)
-
-Rather than relying solely on the final layer, CAW-Conv combines predictions from all layers using validation-loss-based weighting:
-
-This allows layers with stronger predictive power to contribute more to the final decision.
-
----
-
 ## Main Results
 
 ### CIFAR-10, MNIST, Fashion-MNIST
