@@ -1,19 +1,5 @@
 # Forward-Only Convolutional Neural Networks with Learnable Channel-Class Assignment (CAW-Conv)
 
-<p align="center">
-  <img src="docs/architecture.png" width="900">
-</p>
-
-<p align="center">
-  <a href="https://arxiv.org/abs/2606.09928">
-    <img src="https://img.shields.io/badge/arXiv-2606.09928-b31b1b.svg">
-  </a>
-  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg">
-  <img src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg">
-  <img src="https://img.shields.io/badge/License-MIT-green.svg">
-</p>
-
-Official PyTorch implementation of the paper:
 
 > **Forward-Only Convolutional Neural Networks with Learnable Channel-Class Assignment**
 > Mohammadnavid Ghader, Saeed Reza Kheradpisheh, Bahar Farahani, Mahmood Fazlali
@@ -44,10 +30,6 @@ Unlike previous FF-based convolutional methods that rely on static channel group
 
 Instead of assigning channels permanently to predefined class groups, each convolutional layer learns a channel-class contribution matrix:
 
-<p align="center">
-  <img src="docs/cawconv_block.png" width="700">
-</p>
-
 This enables:
 
 * Adaptive channel specialization
@@ -75,10 +57,6 @@ These regularizers promote:
 ### Layer Contribution Strategy (LCS)
 
 Rather than relying solely on the final layer, CAW-Conv combines predictions from all layers using validation-loss-based weighting:
-
-<p align="center">
-  <img src="docs/lcs.png" width="700">
-</p>
 
 This allows layers with stronger predictive power to contribute more to the final decision.
 
