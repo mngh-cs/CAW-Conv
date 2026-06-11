@@ -1,7 +1,5 @@
 # Forward-Only Convolutional Neural Networks with Learnable Channel-Class Assignment (CAW-Conv)
 
-
-> **Forward-Only Convolutional Neural Networks with Learnable Channel-Class Assignment**
 > Mohammadnavid Ghader, Saeed Reza Kheradpisheh, Bahar Farahani, Mahmood Fazlali
 > *arXiv 2026*
 
