@@ -48,9 +48,8 @@ Unlike previous FF-based convolutional methods that rely on static channel group
 
 ## Publication Details
 
-**arXiv:** https://arxiv.org/abs/2606.09928
-
-**PDF:** https://arxiv.org/pdf/2606.09928
+- **arXiv:** https://arxiv.org/abs/2606.09928
+- **PDF:** https://arxiv.org/pdf/2606.09928.pdf
 
 ---
 
