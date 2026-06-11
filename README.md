@@ -46,6 +46,17 @@ Unlike previous FF-based convolutional methods that rely on static channel group
 
 ---
 
+### 📄 Paper
+
+> **Forward-Only Convolutional Neural Networks with Learnable Channel-Class Assignment**  
+> Mohammadnavid Ghader, Saeed Reza Kheradpisheh, Bahar Farahani, Mahmood Fazlali
+
+**arXiv:** https://arxiv.org/abs/2606.09928
+
+**PDF:** https://arxiv.org/pdf/2606.09928
+
+---
+
 ## Citation
 
 If you find this work useful, please cite:
