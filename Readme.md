@@ -1,0 +1,126 @@
+# Forward-Only Convolutional Neural Networks with Learnable Channel-Class Assignment (CAW-Conv)
+
+<p align="center">
+  <img src="docs/architecture.png" width="900">
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2606.09928">
+    <img src="https://img.shields.io/badge/arXiv-2606.09928-b31b1b.svg">
+  </a>
+  <img src="https://img.shields.io/badge/Python-3.10+-blue.svg">
+  <img src="https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg">
+  <img src="https://img.shields.io/badge/License-MIT-green.svg">
+</p>
+
+Official PyTorch implementation of the paper:
+
+> **Forward-Only Convolutional Neural Networks with Learnable Channel-Class Assignment**
+> Mohammadnavid Ghader, Saeed Reza Kheradpisheh, Bahar Farahani, Mahmood Fazlali
+> *arXiv 2026*
+
+---
+
+## Overview
+
+The Forward-Forward (FF) algorithm has emerged as a biologically inspired alternative to backpropagation by replacing global gradient propagation with local forward-only learning objectives.
+
+This repository introduces **Class-Adaptive Weighted Convolution (CAW-Conv)**, a novel forward-only convolutional learning framework that improves feature specialization and channel utilization through:
+
+* **Learnable Channel-Class Assignment**
+* **Entropy Regularization**
+* **Orthogonality Regularization**
+* **Loss-Aware Layer Contribution Strategy**
+* **Fully Local Layer-Wise Optimization**
+* **Deep Residual Forward-Only CNN Training**
+
+Unlike previous FF-based convolutional methods that rely on static channel grouping, CAW-Conv dynamically learns how each convolutional channel contributes to different classes during training.
+
+---
+
+## Key Contributions
+
+### Learnable Channel-Class Assignment
+
+Instead of assigning channels permanently to predefined class groups, each convolutional layer learns a channel-class contribution matrix:
+
+<p align="center">
+  <img src="docs/cawconv_block.png" width="700">
+</p>
+
+This enables:
+
+* Adaptive channel specialization
+* Improved feature diversity
+* Better utilization of network capacity
+* Reduced redundancy across channels
+
+---
+
+### Entropy and Orthogonality Regularization
+
+To encourage meaningful channel specialization, the channel-class assignment matrix is regularized using:
+
+* Entropy minimization
+* Orthogonality constraints
+
+These regularizers promote:
+
+* Sparse class-channel associations
+* Diverse class representations
+* Improved discriminative learning
+
+---
+
+### Layer Contribution Strategy (LCS)
+
+Rather than relying solely on the final layer, CAW-Conv combines predictions from all layers using validation-loss-based weighting:
+
+<p align="center">
+  <img src="docs/lcs.png" width="700">
+</p>
+
+This allows layers with stronger predictive power to contribute more to the final decision.
+
+---
+
+## Main Results
+
+### CIFAR-10, MNIST, Fashion-MNIST
+
+| Method              | Architecture  | CIFAR-10  | MNIST     | Fashion-MNIST |
+| ------------------- | ------------- | --------- | --------- | ------------- |
+| FF                  | MLP           | 59.00     | 98.69     | -             |
+| SymBa               | MLP           | 59.09     | 98.58     | -             |
+| CaFo                | CNN           | 67.43     | 98.80     | -             |
+| CwComp              | CNN           | 78.11     | 99.42     | 92.31         |
+| DeeperForward       | CNN           | 86.22     | 99.63     | 93.13         |
+| **CAW-Conv (Ours)** | **ResNet-17** | **89.37** | **99.74** | **94.55**     |
+
+---
+
+### CIFAR-100 and Tiny-ImageNet
+
+| Method               | CIFAR-100 | Tiny-ImageNet |
+| -------------------- | --------- | ------------- |
+| DeeperForward        | 53.09     | 41.36         |
+| DeeperForward (CH×3) | 60.28     | -             |
+| **CAW-Conv**         | **63.52** | **49.87**     |
+| **CAW-Conv (CH×3)**  | **69.74** | -             |
+
+---
+
+## Citation
+
+If you find this work useful, please cite:
+
+```bibtex
+@article{ghader2026forwardonly,
+  title={Forward-Only Convolutional Neural Networks with Learnable Channel-Class Assignment},
+  author={Ghader, Mohammadnavid and Kheradpisheh, Saeed Reza and Farahani, Bahar and Fazlali, Mahmood},
+  journal={arXiv preprint arXiv:2606.09928},
+  year={2026}
+}
+```
+
+
